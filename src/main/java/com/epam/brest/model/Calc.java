@@ -1,5 +1,5 @@
 package com.epam.brest.model;
-
+import static com.epam.brest.model.StatusType.CALC;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
@@ -22,6 +22,6 @@ public class Calc implements Status {
 
     @Override
     public StatusType getType() {
-        return StatusType.CALC;
+        return CALC;
     }
 }
