@@ -3,7 +3,7 @@ package com.epam.brest.model;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
-import static com.epam.brest.model.StatusType.READ_DATA;
+import static com.epam.brest.model.StatusType.*;
 
 public class ReadData implements Status {
     Scanner scanner;
@@ -17,20 +17,22 @@ public class ReadData implements Status {
         if (userData.size() < 2) {
             System.out.println(messages.get(userData.size()));
             String inputValue = scanner.next();
-            if ((inputValue.equalsIgnoreCase("q"))) {
+            if (inputValue.equalsIgnoreCase("q")) {
                 return new Exit();
             } else if (isCorrectValue(inputValue)) {
                 userData.add(new BigDecimal(inputValue));
-            }else {
-                return new Calc(scanner);
             }
+        } else {
+            return new Calc(scanner);
         }
+
         return this;
     }
 
     private boolean isCorrectValue(String inputValue) {
         try {
             BigDecimal enteredValue = new BigDecimal(inputValue);
+            return true;
         } catch (NumberFormatException nfe) {
             System.out.println("Incorrect value" + inputValue);
         }

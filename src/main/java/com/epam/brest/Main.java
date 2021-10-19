@@ -13,8 +13,6 @@ public class Main {
     public static void main(String[] args) {
 
 
-        BigDecimal weight, pricePerKg, length, pricePerKm;
-
         try (Scanner scanner = new Scanner(System.in)) {
 
             Status currentStatus = new ReadData(scanner);
