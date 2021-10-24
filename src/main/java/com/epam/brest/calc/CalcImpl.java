@@ -8,3 +8,4 @@ public class CalcImpl implements Calc {
         return weight.multiply(pricePerKg).add(length.multiply(pricePerKm));
     }
 }
+
